@@ -28,8 +28,6 @@ def Titan(say):
 
 # LISTENING
 def Listen():
-    # for index, name in enumerate(sr.Microphone.list_microphone_names()):
-    #     print("Microphone with name \"{1}\" found for `Microphone(device_index={0})`".format(index, name))
     with mic as source:
         print('Listening...')
         audio = r.listen(source)
@@ -55,7 +53,7 @@ def wish():
         Titan("O Lord! It's late! What is it that you want?")
 
 
-# TAKINGNOTE
+# TAKING NOTE
 def note():
     Titan('Taking note...')
     noted = Listen().lower()
@@ -200,6 +198,11 @@ while True:
         Titan('Opening Spotify...')
         location = 'C:/Users/ammar/AppData/Roaming/Spotify/Spotify.exe'
         subprocess.Popen([location])
+        Titan(response)
+    elif 'open pycharm' in text:
+        location = "C:/Program Files/JetBrains/PyCharm Community Edition 2019.2.1/bin/pycharm64.exe"
+        subprocess.Popen([location])
+        Titan('Opening PyCharm...')
         Titan(response)
     elif 'open visual studio' in text:
         location = "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/devenv.exe"
